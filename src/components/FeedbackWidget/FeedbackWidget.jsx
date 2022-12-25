@@ -14,9 +14,13 @@ export class FeedbackWidget extends Component {
 
   countPositiveFeedbackPercentage = () => {
     this.setState(
-      ({ good: { value: goodValue }, total: { value: totalValue } }) => ({
+      ({
+        good: { value: goodValue },
+        total: { value: totalValue },
+        positivePercentage,
+      }) => ({
         positivePercentage: {
-          ...this.state.positivePercentage,
+          ...positivePercentage,
           value: Math.round((goodValue * 100) / totalValue.toFixed(5)) + '%',
         },
       })
@@ -49,7 +53,7 @@ export class FeedbackWidget extends Component {
     return (
       <div className={css.feedbackWidget}>
         <p className={css.title}> {this.props.title}</p>
-        
+
         <FeedbackButton
           buttonName="good"
           buttonTitle="Good"
