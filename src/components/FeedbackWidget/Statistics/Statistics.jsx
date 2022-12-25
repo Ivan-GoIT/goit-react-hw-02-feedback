@@ -1,15 +1,15 @@
 import css from './Statistics.module.css';
 
 export const Statistics = ({ statistics }) => {
-  const items = Object.entries(statistics);
+    const items = Object.values(statistics);
   return (
     <>
       <h2> Statistics </h2>
       <ul className={css['list-zeroing']}>
-        {items.map(([key, value]) => (
-          <li key={key}>
+        {items.map(({ name, value }) => (
+          <li key={name}>
             <p>
-              {key}: {value}
+              {name}: {value}
             </p>
           </li>
         ))}
