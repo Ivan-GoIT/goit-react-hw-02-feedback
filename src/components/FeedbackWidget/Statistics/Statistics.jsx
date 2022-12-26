@@ -1,4 +1,5 @@
 import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({ statistics }) => {
     const items = Object.values(statistics);
@@ -16,3 +17,9 @@ export const Statistics = ({ statistics }) => {
     </>
   );
 };
+
+
+Statistics.propTypes = {
+  statistics:PropTypes.shape({
+  })
+}
